@@ -57,25 +57,24 @@
 
     <div class="col-md-6 mb-4">
      <label for="dist">Select District:</label>
-  <select id="dist" onchange="populatedist()">
+  <select id="dist" name="dist" onchange="populatedist()">
     <option value="">--Select District--</option>
-    <option value="dist1">Alapuzha</option>
-    <option value="dist2">Ernakulam</option>
-    <option value="dist3">Idukki</option>
-     <option value="dist4">Kottayam</option>
-     <option value="dist5">Kozhikode</option>
-     <option value="dist6">Palakkad</option>
+    <option value="Alapuzha">Alapuzha</option>
+    <option value="Ernakulam">Ernakulam</option>
+    <option value="Idukki">Idukki</option>
+     <option value="Kottayam">Kottayam</option>
+     <option value="Kozhikode">Kozhikode</option>
+     <option value="Palakkad">Palakkad</option>
 
     <!-- Add more state options here -->
   </select>
     </div>
     <div class="col-md-6 mb-4">
   <label for="branch">Select Branch:</label>
-  <select id="branch">
+  <select id="branch" name="branch">
     <option value="">--Select Branch--</option>
   </select>
     </div>
-
   <script>
     function populatedist() {
       var distSelect = document.getElementById("dist");
@@ -86,35 +85,35 @@
       branchSelect.innerHTML = '<option value="">--Select Branch--</option>';
 
       // Populate options based on selected state
-      if (selecteddist === "dist1") {
-        addDistrictOption("br1", "Cherthala");
-        addDistrictOption("br2", "Kuttanad");
-        addDistrictOption("br3", "Pattanakkad");
+      if (selecteddist === "Alapuzha") {
+        addDistrictOption("Cherthala", "Cherthala");
+        addDistrictOption("Kuttanad", "Kuttanad");
+        addDistrictOption("Pattanakkad", "Pattanakkad");
         // Add more district options for state1
-      } else if (selecteddist === "dist2") {
-        addDistrictOption("br4", "Aluva");
-        addDistrictOption("br5", "Eloor");
-        addDistrictOption("br6", "Paravur");
+      } else if (selecteddist === "Ernakulam") {
+        addDistrictOption("Aluva", "Aluva");
+        addDistrictOption("Eloor", "Eloor");
+        addDistrictOption("Paravur", "Paravur");
         // Add more district options for state2
-      } else if (selecteddist === "dist3") {
-        addDistrictOption("br7", "Adimali");
-        addDistrictOption("br8", "Kattappana");
-        addDistrictOption("br9", "Munnar");
+      } else if (selecteddist === "Idukki") {
+        addDistrictOption("Adimali", "Adimali");
+        addDistrictOption("Kattappana", "Kattappana");
+        addDistrictOption("Munnar", "Munnar");
         // Add more district options for state3
-      } else if (selecteddist === "dist4") {
-        addDistrictOption("br10", "Ettumanoor");
-        addDistrictOption("br11", "Kumarakam");
-        addDistrictOption("br12", "Vaikom");
+      } else if (selecteddist === "Kottayam") {
+        addDistrictOption("Ettumanoor", "Ettumanoor");
+        addDistrictOption("Kumarakam", "Kumarakam");
+        addDistrictOption("Vaikom", "Vaikom");
         // Add more district options for state3
-      } else if (selecteddist === "dist5") {
-        addDistrictOption("br13", "Beypore");
-        addDistrictOption("br14", "Kappad");
-        addDistrictOption("br15", "Vadakara");
+      } else if (selecteddist === "Kozhikode") {
+        addDistrictOption("Beypore", "Beypore");
+        addDistrictOption("Kappad", "Kappad");
+        addDistrictOption("Vadakara", "Vadakara");
         // Add more district options for state3
-      } else if (selecteddist === "dist6") {
-        addDistrictOption("br16", "Chittur");
-        addDistrictOption("br17", "Malampuzha");
-        addDistrictOption("br18", "Pattambi");
+      } else if (selecteddist === "Palakkad") {
+        addDistrictOption("Chittur", "Chittur");
+        addDistrictOption("Malampuzha", "Malampuzha");
+        addDistrictOption("Pattambi", "Pattambi");
         // Add more district options for state3
       }
       // Add more if statements for other states
@@ -130,23 +129,27 @@
 
     <div class="col-md-6 mb-4">
       <label> Account Type </label>
-    <select id="acc">
+    <select id="acc", name="acc">
         <option value="savings">Savings</option>
         <option value="current">Current</option>
     </select>
     </div>
 
+
     <div class="col-md-6 mb-4">
-        <label> Materials Provide </label> <br>
-    <input type="checkbox" name="material" value="debit" id="debitCheckbox">
+        <label> Materials Provided </label> <br>
+    <input type="checkbox" name="debitCheckbox" value="debit" id="debitCheckbox">
   <label for="debitCheckbox">Debit Card</label><br>
 
-  <input type="checkbox" name="material" value="credit" id="creditCheckbox">
-  <label for="creditCheckbox">Credit Card</label><br>
+  <input type="checkbox" name="creditCheckbox" value="credit" id="creditCheckbox">
+  <label for="creditCheckbox">debitCheckbox Card</label><br>
 
-  <input type="checkbox" name="material" value="cheque" id="chequeCheckbox">
+  <input type="checkbox" name="chequeCheckbox" value="cheque" id="chequeCheckbox">
   <label for="chequeCheckbox">Cheque Book</label><br>
     </div>
+
+
+
 
   <div class="col-md-6 mb-4">
     <input type="submit"><br>
