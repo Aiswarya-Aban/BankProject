@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section class="h-100 h-custom" style="background-color: #021b43;">
+  <div class="container py-3 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">LOGIN</h3>
+
+    <div id="absoluteCenteredDiv">
+        <form action="login" method="post">
+            {% csrf_token %}
+            <div class="box">
+<!--                <h1>Login Form</h1>-->
+                <div class="col-md-6 mb-4">
+                    <label> User Name </label>
+                   <input type="text" name="username" placeholder="Enter your UserName"><br>
+                </div>
+                <div class="col-md-6 mb-4">
+                 <label> Password </label>
+                 <input type="password" name="password" placeholder="Enter your Password"><br>
+                </div>
+                <div class="col-md-6 mb-4">
+                <input type="submit">
+                </div>
+            </div>
+        </form>
+        <p>New Registration? <a class="fpwd" href="/register">Click Here!</a></p>
+    </div>
+               </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+
+{% endblock %}

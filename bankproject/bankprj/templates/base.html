@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>AshBanks - Financial Bank</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-574-mexant.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+<!--
+
+TemplateMo 574 Mexant
+
+https://templatemo.com/tm-574-mexant
+
+-->
+  </head>
+<body style="background-color: #021b43;">
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+<!--                          <img src="{% static 'assets/images/logo1.png' %}" alt="">-->
+                          <img src="{% static 'assets/images/newlogo.png' %}" alt="">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+
+
+                       <ul class="nav">
+<!--                          <li class="scroll-to-section"><a href="#top" class="active">Register</a></li>-->
+                          {% if user.is_authenticated %}
+                          <li class="scroll-to-section"><a href="#top">Hello {{user.username}}</a></li>
+                          <li class="scroll-to-section"><a href="/logout">Logout</a></li>
+                          {% else %}
+                          <li class="scroll-to-section"><a href="/">Home</a></li>
+                          <li class="scroll-to-section"><a href="/register">Register</a></li>
+                          <li class="scroll-to-section"><a href="/login">Login</a></li>
+                          {% endif %}
+
+
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Branches</a>
+                              <ul class="sub-menu">
+                                  <li><a href="https://en.wikipedia.org/wiki/Alappuzha">Alapuzha</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Idukki_district">Idukki</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Kottayam">Kottayam</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode</a></li>
+                                  <li><a href="https://en.wikipedia.org/wiki/Palakkad">Palakkad</a></li>
+                              </ul>
+                          </li>
+<!--                          <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li>-->
+<!--                          <li><a href="contact-us.html">Contact Support</a></li> -->
+                      </ul>
+
+
+
+
+
+
+
+<!--                      <ul class="nav">-->
+<!--&lt;!&ndash;                          <li class="scroll-to-section"><a href="#top" class="active">Register</a></li>&ndash;&gt;-->
+<!--                          <li class="scroll-to-section"><a href="/">Home</a></li>-->
+<!--                          <li class="scroll-to-section"><a href="/logout">Logout</a></li>-->
+<!--                          <li class="scroll-to-section"><a href="/register">Register</a></li>-->
+<!--                          <li class="scroll-to-section"><a href="/login">Login</a></li>-->
+<!--                          <li class="has-sub">-->
+<!--                              <a href="javascript:void(0)">Branches</a>-->
+<!--                              <ul class="sub-menu">-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Alappuzha">Alapuzha</a></li>-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a></li>-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Idukki_district">Idukki</a></li>-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Kottayam">Kottayam</a></li>-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode</a></li>-->
+<!--                                  <li><a href="https://en.wikipedia.org/wiki/Palakkad">Palakkad</a></li>-->
+<!--                              </ul>-->
+<!--                          </li>-->
+<!--&lt;!&ndash;                          <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                          <li><a href="contact-us.html">Contact Support</a></li> &ndash;&gt;-->
+<!--                      </ul>-->
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+      </div></div>
+  <!-- ***** Header Area End ***** -->
+{% block content %}
+{% endblock %}
+
+    <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2023 Ash Banks Co., Ltd. All Rights Reserved.
+
+          <br>Designed by <a title="CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">Aiswarya Aban</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
