@@ -1,6 +1,7 @@
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from bankapp.models import Forms
 
 from bankapp.models import Forms
 
@@ -38,10 +39,23 @@ def forms(request):
         dist = request.POST['dist']
         branch = request.POST['branch']
         acc=request.POST['acc']
-        material = request.POST['material']
-        userf = User.objects.create_user(uname=uname,dob=dob,age=age,gender=gender,phn=phn,mail=mail,address=address,dist=dist,branch=branch,acc=acc,material=material)
-        # userf = User.objects.create_user(uname=uname, dob=dob, age=age, gender=gender, phn=phn, mail=mail,address=address, material=material)
-        userf.save()
+        debit = request.POST.get('debitCheckbox', '')
+        credit = request.POST.get('creditCheckbox', '')
+        cheque = request.POST.get('chequeCheckbox', '')
+        material = f"{debit}, {credit}, {cheque}"
+        user = request.user.username
+
+        form = Forms()
+        form.uname = user
+        form.dob = dob
+        form.age = age
+        form.gender = gender
+        form.phn = phn
+        form.mail = mail
+        form.dist = dist
+        form.branch = branch
+        form.acc = True
+        form.save()
         return redirect('/')
     # else:
     #     return redirect('forms')
