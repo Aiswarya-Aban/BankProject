@@ -35,8 +35,8 @@ def forms(request):
         phn = request.POST['phn']
         mail = request.POST['mail']
         address = request.POST['address']
-        dist = request.GET['dist']
-        branch = request.GET['branch']
+        dist = request.POST['dist']
+        branch = request.POST['branch']
         acc=request.POST['acc']
         material = request.POST['material']
         userf = User.objects.create_user(uname=uname,dob=dob,age=age,gender=gender,phn=phn,mail=mail,address=address,dist=dist,branch=branch,acc=acc,material=material)
